@@ -1,0 +1,50 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=c17",
+      "-D_THREAD_SAFE",
+      "-I/usr/local/include/SDL2",
+      "-Iinclude",
+      "-o",
+      "build/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/bryce/Github/mdlbrt",
+    "file": "/home/bryce/Github/mdlbrt/src/main.c",
+    "output": "/home/bryce/Github/mdlbrt/build/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=c17",
+      "-D_THREAD_SAFE",
+      "-I/usr/local/include/SDL2",
+      "-Iinclude",
+      "-o",
+      "build/graph.o",
+      "src/graph.c"
+    ],
+    "directory": "/home/bryce/Github/mdlbrt",
+    "file": "/home/bryce/Github/mdlbrt/src/graph.c",
+    "output": "/home/bryce/Github/mdlbrt/build/graph.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=c17",
+      "-D_THREAD_SAFE",
+      "-I/usr/local/include/SDL2",
+      "-Iinclude",
+      "-o",
+      "build/colors.o",
+      "src/colors.c"
+    ],
+    "directory": "/home/bryce/Github/mdlbrt",
+    "file": "/home/bryce/Github/mdlbrt/src/colors.c",
+    "output": "/home/bryce/Github/mdlbrt/build/colors.o"
+  }
+]
