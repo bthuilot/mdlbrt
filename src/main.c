@@ -187,6 +187,9 @@ int main()
 {
   Program *program = init_program();
   int** colors = generate_colors(MAX_ITER);
+
+  update(program, colors);
+
   event_loop(program, colors);
   free_colors(colors, MAX_ITER);
 

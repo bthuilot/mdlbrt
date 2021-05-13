@@ -6,6 +6,7 @@ OUT_DIR = build
 INC_DIR = include
 SRC_DIR = src
 
+MKDIR_P = mkdir -p
 
 CFLAGS = -std=c17 -D_THREAD_SAFE -I/usr/local/include/SDL2 -I$(INC_DIR)
 TARGET = mdlbrt
@@ -20,8 +21,7 @@ DEPS = $(patsubst %,$(INC_DIR)/%,$(_DEPS))
 _OBJS = $(_SOURCES:.c=.o)
 OBJS = $(patsubst %,$(OUT_DIR)/%,$(_OBJS))
 
-all: $(SOURCES) $(TARGET)
-
+all: directories $(SOURCES) $(TARGET)
 
 $(OUT_DIR)/main.o: $(SRC_DIR)/main.c $(INC_DIR)/main.h
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -36,7 +36,12 @@ $(OUT_DIR)/colors.o: $(SRC_DIR)/colors.c
 $(TARGET): $(OBJS)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-.PHONY: clean
+.PHONY: clean directories
+
+directories: $(OUT_DIR)
+
+$(OUT_DIR):
+	$(MKDIR_P) $(OUT_DIR)
 
 clean:
 	rm -f $(OUT_DIR)/*.o $(TARGET) core *~ 
